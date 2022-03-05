@@ -2,13 +2,13 @@ import { query as q } from 'faunadb'
 
 import NextAuth from "next-auth"
 import { session } from 'next-auth/client'
-import GithubProvider from "next-auth/providers/github"
+import GitHubProvider from "next-auth/providers/github";
 
 import { fauna } from '../../../services/fauna'
 
 export default NextAuth({
   providers: [
-    GithubProvider({
+    GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
       scope: 'read:user'
